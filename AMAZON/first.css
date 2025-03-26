@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+}
+
+
+.navbar{
+    height: 65px;
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;  /* Make the navbar fixed */
+    top: 0;           /* Position it at the top of the page */
+    left: 0;          /* Align it to the left side */
+    width: 100%;      /* Make it take the full width of the screen */
+    z-index: 1000;
+}   
+
+/* BOX 1 */
+.nav-logo{
+    height: 50px;
+    width: 100px;
+}
+
+.logo{
+    background-size: cover;
+    background-image: url("amazon_logo.png");
+    height: 60px;
+    width: 100px;
+}
+
+.border{
+    border: 1.5px solid transparent;
+}
+
+.border:hover{
+    border: 1.5px solid wheat;
+}
+
+/* BOX 2 */
+.first{
+    color: #cccccc;
+   font-size: 0.75rem;
+   margin-left: 15px;
+}
+
+.second{
+    font-size: 1rem;
+    margin-left: 3px;
+}
+
+.add-icon{
+    display: flex;
+}
+
+/* BOX 3 */
+.nav-searched{
+    height: 40px;
+    width: 600px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-evenly;
+
+    
+}
+
+.select{
+    width: 50px;
+    padding: 5px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: #f3f3f3;
+    border: none;
+}
+
+.search_input{
+    width: 100%; 
+    padding-left: 10px;
+    border:none;
+}
+
+.search_icon{
+    width: 40px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border-top-Right-radius: 4px;
+    border-bottom-Right-radius: 4px;
+    background-color:#febd68;
+}
+
+/* BOX 4 */
+.hello{
+    color: #cccccc;
+  font-size: 0.75rem;
+}
+
+.account{
+    font-size: 1rem;
+}
+
+.Carts{
+    color: #febd68;
+}
+
+.country{
+    height: 20px;
+}
+
+.indian{
+    width: 60px;
+    border-radius:5px;
+    padding: 3px;
+    background-color: aliceblue;
+}
+
+/*----------------------- part 2----------------------------------------------------------- */
+.outer-panel{
+    height: 40px;
+    background-color: #222f3d;
+    color: rgb(237, 227, 227);
+    display: flex;
+    align-items: center;
+    font-size: 0.80rem;
+    margin-top: 65px;  /* Add margin-top to push the panel below the fixed navbar */
+    z-index: 999;  
+}
+
+.inside-panel{
+    height: 30px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.Electronics{
+    margin-left: 550px;
+}
+
+/*------------------------ part 3---------------------------------------------------------- */
+.part3{
+    height: 300px;
+    width: 100%;
+}
+
+.hero-section{
+    background-size: cover;
+    background-image: url("hero_image.jpg");
+    height: 300px;
+    width: 100%;
+}
+              
+        /*------- row 1---- */
+
+        .row_1{
+            height: 500px;
+            width: 100%;
+            justify-content: space-evenly;
+            display: flex;
+            background-color: #e2e7e6;
+        }
+        .product-1{
+            height: 400px;
+            width: 100%;;
+            margin: 15px;
+            padding: 25px;
+            background-color: white;
+            align-items: center;
+                
+        }
+        .product-2{
+            height: 400px;
+            width: 100%;;
+            margin: 15px;
+            padding: 25px;
+            background-color: white;
+            align-items: center;   
+        }
+        .product-3{
+            height: 400px;
+            width: 100%;;
+            margin: 15px;
+            padding: 25px;
+            background-color: white;
+            align-items: center;
+        }
+        .product-4{
+            height: 400px;
+            width: 100%;;
+            margin: 15px;
+            padding: 25px;
+            background-color: white;
+            align-items: center;
+            
+        }
+
+/*------------------------ last---------------------------------------------------------- */
+
+.second-last_box{
+    height: 30px;
+    background-color: #3c3d3e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last_box{
+    height: 400px;
+    width:100%;
+    background-color: #222323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-1{
+    width: 250px;
+    margin: 15px;
+    background-color: #222323;
+    align-items: center;   
+}
+
+.main{
+    font-size: 1.5rem;
+    color: #febd68
+}
+
+.l1{
+    color: rgb(135, 130, 130);
+    margin-top:6px;
+}
+
+.l2{
+    color: rgb(135, 130, 130);
+    margin-top:2px;
+}
+
+.l3{
+    color: rgb(135, 130, 130);
+    margin-top:2px;
+}
+
+.l4{
+    color: rgb(135, 130, 130);
+    margin-top:2px;
+}
+
+/*------------------------ last-logo---------------------------------------------------------- */
+
+.last_nav{
+    height: 50px;
+    background-color: #1e2121;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+
+.last-logo{
+    background-size: cover;
+    background-image: url("amazon_logo.png");
+    height: 50px;
+    width: 100px;
+}
