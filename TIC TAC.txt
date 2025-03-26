@@ -1,0 +1,198 @@
+import java.util.*;
+class tictac {
+    static char arr[] = {'1','2','3','4','5','6','7','8','9'};
+   static int x=0;
+    void create() {
+        System.out.println(arr[0] + " | " + arr[1] + " | " + arr[2]);
+        System.out.println("--|---|--" );
+        System.out.println(arr[3] + " | " + arr[4] + " | " + arr[5]);
+        System.out.println("--|---|--" );
+        System.out.println(arr[6] + " | " + arr[7] + " | " + arr[8]);
+    }
+    void checkwin()
+    {
+        if(arr[0]==arr[1] && arr[1]==arr[2])
+        {
+            x++;
+            arr[0]='W';
+            arr[1]='W';
+            arr[2]='W';
+        }
+        if(arr[0]==arr[3] && arr[3]==arr[6])
+        {
+            x++;
+            arr[0]='W';
+            arr[6]='W';
+            arr[2]='W';
+                if(arr[0]!=arr[3] && arr[3]!=arr[6])
+        {
+            System.out.println("match is drawn");
+        }
+        }
+        if(arr[1]==arr[4] && arr[4]==arr[7])
+        {
+            x++;
+            arr[4]='W';
+            arr[1]='W';
+            arr[7]='W';
+        }
+        if(arr[2]==arr[5] && arr[5]==arr[8])
+        {
+            x++;
+            arr[2]='W';
+            arr[5]='W';
+            arr[8]='W';
+        }
+        if(arr[6]==arr[7] && arr[7]==arr[8])
+        {
+            x++;
+            arr[6]='W';
+            arr[7]='W';
+            arr[8]='W';
+        }
+        if(arr[3]==arr[4] && arr[4]==arr[5])
+        {
+            x++;
+            arr[3]='W';
+            arr[4]='W';
+            arr[5]='W';
+        }
+        if(arr[2]==arr[4] && arr[4]==arr[6])
+        {
+            x++;
+            arr[2]='W';
+            arr[4]='W';
+            arr[6]='W';
+        }
+        if(arr[0]==arr[4] && arr[4]==arr[8])
+        {
+            x++;
+            arr[0]='W';
+            arr[8]='W';
+            arr[4]='W';
+        }
+    }
+
+    void drawn()
+    {
+        if(arr[0]=='x' || arr[0]=='o')
+        {
+             if(arr[1]=='x' || arr[1]=='o')
+        {
+             if(arr[2]=='x' || arr[2]=='o')
+        {
+             if(arr[3]=='x' || arr[3]=='o')
+        {
+             if(arr[4]=='x' || arr[4]=='o')
+        {
+             if(arr[5]=='x' || arr[5]=='o')
+        {
+             if(arr[6]=='x' || arr[6]=='o')
+        {
+             if(arr[7]=='x' || arr[7]=='o')
+        {
+             if(arr[8]=='x' || arr[8]=='o')
+        {
+            create();
+            x=2;
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+
+        }
+    }
+   void chance(int position ,char symbol){
+         if(position<=9)
+              {
+                  arr[position-1]=symbol;
+              }
+     }
+    public static void main(String[] args) {
+        int y,z;
+        System.out.println("\t\t-------TIC TAC TOE-------");
+        tictac obj = new tictac();
+        obj.create();
+       Scanner sc=new Scanner(System.in);
+       do{   // player 1
+             System.out.println("entr position player 1 (o)");
+              y=sc.nextInt();
+                if(arr[y-1]=='o' || arr[y-1]=='x')
+           {
+               System.out.println("choice already fills");
+               System.out.println("entr another  position player 1 (o)");
+              y=sc.nextInt();
+               obj.chance(y,'o');
+               obj.checkwin();
+               obj.drawn();
+               if(x==2)
+               {   System.out.println("**______________________ **");
+                   System.out.println("\t match is drawn");
+
+                   System.out.println("**______________________ **");
+                                      break;
+               }
+               obj.create();
+           }
+           else{
+               obj.chance(y,'o');
+               obj.checkwin();
+                obj.drawn();
+               if(x==2)
+               {System.out.println("**______________________ **");
+                   System.out.println("\t match is drawn");
+               System.out.println("**______________________ **");
+                   break;
+               }
+               obj.create();
+           if(x==1)
+           {System.out.println("**______________________ **");
+             System.out.println("\t **PLAYER 1win **");
+             System.out.println("**______________________ **");
+              break;
+           }
+           }   //player 2
+            System.out.println("entr position player 2 (x)");
+              z=sc.nextInt();
+              if(arr[z-1]=='o' || arr[z-1]=='x')
+           {
+               System.out.println("choice already fills");
+                   System.out.println("entr another position player 2 (x)");
+              z=sc.nextInt();
+               obj.chance(z,'x');
+           obj.checkwin();
+            obj.drawn();
+               if(x==2)
+               {   System.out.println("**______________________ **");
+                   System.out.println("\t match is drawn");
+                   System.out.println("**______________________ **");
+                   break;
+               }
+           obj.create();
+           }
+           else
+           {
+                obj.chance(z,'x');
+           obj.checkwin();
+            obj.drawn();
+               if(x==2)
+               {   System.out.println("**______________________ **");
+                   System.out.println("\t match is drawn");
+                   System.out.println("**______________________ **");
+                   break;
+               }
+           obj.create();
+           if(x==1)
+           { System.out.println("**______________________ **");
+             System.out.println("**\t PLAYER 2win **");
+             System.out.println("**______________________ **");
+               break;
+           }
+           }
+    }while(x==0);
+}
+    }
