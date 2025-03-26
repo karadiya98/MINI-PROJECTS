@@ -1,0 +1,260 @@
+import java.util.*;
+
+public class hotelreservation {
+    public static int top = -1;
+    public static int top2 = -1;
+    public static int top3 = -1;
+
+
+    static int creation() {
+        Scanner sc = new Scanner(System.in);
+        System.out.printf("_________________________________________________________________________________");
+        System.out.printf("\n\t\t1) checkin");
+        System.out.printf("\n\t\t2) checkout");
+        System.out.printf("\n\t\t3) exit");
+
+        System.out.printf("\n\t\t-> enter your choice :-");
+        int choice = sc.nextInt();
+        System.out.printf("_________________________________________________________________________________");
+
+        return choice;
+    }
+
+    static int checkin() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.printf("\n\t\t >>> DETAILS FOR CHECKIN\n ");
+        System.out.printf("\n\t\t->enter your name  :-");
+        String name = sc.nextLine();
+        System.out.printf("\t\t->enter your age   :-");
+        String age = sc.nextLine();
+        System.out.printf("\t\t->enter your phone   :-");
+        String phone = sc.nextLine();
+
+        int room = 0;
+        if (name == null && age == null && phone == null) {
+            System.out.printf("((*))fill all this detail");
+        } else {
+            System.out.printf("\n\t\t >>> CHOOSE A TYPE OF ROOM ");
+            System.out.printf("\n\t\t<1> simple .....1200/");
+            System.out.printf("\n\t\t<2> deluxe .....2500/");
+            System.out.printf("\n\t\t<3> luxury .....4500/");
+            System.out.printf("\n\t\t->select your  choice :-");
+            room = sc.nextInt();
+            System.out.printf("\n");
+        }
+        System.out.printf("_________________________________________________________________________________\n\n");
+        return room;
+    }
+
+    static int simple(int[] arr) {
+        Scanner sc = new Scanner(System.in);
+        top++;
+        int payment=0;
+
+        if (top < 3) {
+            while(payment!=1200) {
+                System.out.printf("\t\t->pls do a payment mention it above :- ");
+                payment = sc.nextInt();
+                if (payment < 1200) {
+                    System.out.printf("\t\t((*)) your amount is less than 1200\n");
+                }
+            }
+            if(payment==1200)
+            {
+                System.out.printf("\n\t\t\t\t->welcome to your " + arr[top] + "room \n");
+                System.out.printf("\t\t\t>>thanx for visiting \n");
+                System.out.printf("\n\t\twant to continue or exit \n ");
+            }
+
+        } else {
+            System.out.printf("\t\t*** rooms are full \n ");
+        }
+
+
+
+        return top;
+    }
+
+
+    static int deluxe(int[] arr2) {
+        Scanner sc = new Scanner(System.in);
+        top2++;
+        int payment=0;
+
+        if (top2 < 3) {
+            while(payment!=2500) {
+                System.out.printf("\t\t->pls do a payment mention it above :- ");
+                payment = sc.nextInt();
+                if (payment < 2500) {
+                    System.out.printf("\t\t((*)) your amount is less than 2500\n");
+                }
+            }
+            if(payment==2500)
+            {
+                System.out.printf("\n\t\t\t\t->welcome to your " + arr2[top2] + "room \n");
+                System.out.printf("\t\t\t>>thanx for visiting \n");
+                System.out.printf("\n\t\twant to continue or exit \n ");
+            }
+
+        } else {
+            System.out.printf("\t\t\t*** rooms are full \n ");
+        }
+
+
+
+        return top2;
+    }
+
+
+    static int luxury(int[] arr3) {
+        Scanner sc = new Scanner(System.in);
+        top3++;
+        int payment=0;
+
+            if (top3 < 3) {
+                while(payment!=4500) {
+                    System.out.printf("\t\t->pls do a payment mention it above :- ");
+                    payment = sc.nextInt();
+                if (payment < 4500) {
+                    System.out.printf("\t\t((*)) your amount is less than 4500\n");
+                }
+                }
+                if(payment==4500)
+                {
+                    System.out.printf("\n\t\t\t\t->welcome to your " + arr3[top3] + "room \n");
+                    System.out.printf("\t\t\t>>thanx for visiting \n");
+                    System.out.printf("\n\t\twant to continue or exit \n ");
+                }
+
+            } else {
+                System.out.printf("\t\t*** rooms are full \n ");
+            }
+
+
+        return top3;
+    }
+
+
+    static void checkoutforsimple(int[] arr)
+    {
+        System.out.printf("\n---->now you are checkout from "+arr[top]+"room number \n");
+         top--;
+    }
+
+    static void checkoutfordeluxe(int[] arr2)
+    {
+        System.out.printf("\n---->now you are checkout from "+arr2[top2]+"room number \n");
+
+       top2--;
+    }
+
+    static void checkoutforluxury(int[] arr3)
+
+    {
+        System.out.printf("\n---->now you are checkout from "+arr3[top3]+"room number \n");
+        top3 --;
+    }
+
+    public static void main(String[] args) {
+
+        int arr[] =  {101, 102, 103};
+        int arr2[] = {201, 202, 203};
+        int arr3[] = {301, 302, 303};
+
+
+        Scanner sc = new Scanner(System.in);
+        System.out.printf("\n\n\t\t\t\t\t\n\t\t >> HOTEL BLACKSPOT <<\n\n");
+
+        int choice=0;
+        while (choice!= 3) {
+            choice = creation();
+            System.out.printf(String.valueOf(choice));
+
+            int roomchoice = 0,checkout=0;
+            switch (choice) {
+                case 1:
+                    roomchoice = checkin();
+                    break;
+                case 2:
+                    System.out.printf("\n\t\tenter room no for  checkout\n");
+                     checkout=sc.nextInt();
+                    break;
+            }
+
+            if (checkout > 0) {
+                // Check if the room number is between 101 and 103 (simple rooms)
+                if (checkout >= 101 && checkout <= 103) {
+                    switch (checkout) {
+                        case 101:
+                            checkoutforsimple(arr);
+                            break;
+                        case 102:
+                            checkoutforsimple(arr);
+                            break;
+                        case 103:
+                            checkoutforsimple(arr);
+                            break;
+                    }
+                }
+                // Check if the room number is between 201 and 203 (deluxe rooms)
+                else if (checkout >= 201 && checkout <= 203) {
+                    switch (checkout) {
+                        case 201:
+                            checkoutfordeluxe(arr2);
+                            break;
+                        case 202:
+                            checkoutfordeluxe(arr2);
+                            break;
+                        case 203:
+                            checkoutfordeluxe(arr2);
+                            break;
+                    }
+                }
+                // Check if the room number is between 301 and 303 (luxury rooms)
+                else if (checkout >= 301 && checkout <= 303) {
+                    switch (checkout) {
+                        case 301:
+                            checkoutforluxury(arr3);
+                            break;
+                        case 302:
+                            checkoutforluxury(arr3);
+                            break;
+                        case 303:
+                            checkoutforluxury(arr3);
+                            break;
+                    }
+                }
+            }
+
+
+
+       int return1=0;
+            switch (roomchoice) {
+                case 1:
+                    int start = simple(arr);
+                    return1=1;
+                    break;
+                case 2:
+                    int start2 = deluxe(arr2);
+                    return1=1;
+                    break;
+                case 3:
+                    int start3 = luxury(arr3);
+                    return1=1;
+                    break;
+            }
+
+
+
+
+
+        }
+
+
+    }
+
+
+
+
+}
