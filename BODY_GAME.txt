@@ -1,0 +1,101 @@
+import java.util.Scanner;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] words = {"characte_istics", "progra_me", "isotro_e","hell_w","Haidaera_i"};
+        char[] correctLetters = {'r', 'm', 'p','o','l'};
+        String[] bodyParts = {"head", "stomach", "hand","eyes","legs"};
+
+        for (int i = 0; i < words.length; i++) {
+            System.out.println("WHAT IS CORRECT LETTER  BETWEEN WORD ");
+            System.out.println("\t-> " + words[i]);
+            System.out.print(" enter your letter :- ");
+            char input = sc.next().charAt(0);
+
+            if (input == correctLetters[i] || input == Character.toUpperCase(correctLetters[i])) {
+                System.out.println("**congrates you win " + bodyParts[i] + " **");
+                printBodyPart(bodyParts[i]);
+            } else {
+                System.out.println("!! WRONG !!  ");
+                System.out.println("2nd chance   ");
+                System.out.print(" enter your letter :- ");
+                input = sc.next().charAt(0);
+
+                if (input == correctLetters[i] || input == Character.toUpperCase(correctLetters[i])) {
+                    System.out.println("**congrates you win " + bodyParts[i] + " **");
+                    printBodyPart(bodyParts[i]);
+                } else {
+                    System.out.println("!! WRONG !!  ");
+                    System.out.println("you lose " + bodyParts[i-1] + "   ");
+                }
+            }
+        }
+
+        sc.close(); // Close the Scanner object
+    }
+
+    public static void printBodyPart(String bodyPart) {
+        switch (bodyPart) {
+            case "head":
+                System.out.println(" \t______");
+                System.out.println("\t|    |");
+                System.out.println("\t|    |");
+                System.out.println("\t ****");
+                break;
+            case "stomach":
+                System.out.println(" \t  ______");
+                System.out.println("     <|    |>");
+                System.out.println("\t  |    |");
+                System.out.println("\t   *****");
+                System.out.println("\t    ||");
+                System.out.println("\t____||___");
+                System.out.println("\t|        |");
+                System.out.println("\t|        |");
+                System.out.println("\t|________|");
+                break;
+            case "hand":
+                System.out.println(" \t  ______");
+                System.out.println("     <|    |>");
+                System.out.println("\t  |    |");
+                System.out.println("\t   *****");
+                System.out.println("\t    ||");
+                System.out.println("\t____||___");
+                System.out.println("\t|        |");
+                System.out.println("  **|        |**");
+                System.out.println("\t|________|");
+                break;
+            case "eyes":
+                System.out.println(" \t  ______");
+                System.out.println("     <|.  .|>");
+                System.out.println("\t  | __ |");
+                System.out.println("\t   *****");
+                System.out.println("\t    ||");
+                System.out.println("\t____||___");
+                System.out.println("\t|        |");
+                System.out.println("  **|        |**");
+                System.out.println("\t|________|");
+                break;
+            case "legs":
+                System.out.println(" \t  ______");
+                System.out.println("     <|.  .|>");
+                System.out.println("\t  | __ |");
+                System.out.println("\t   *****");
+                System.out.println("\t    ||");
+                System.out.println("\t____||___");
+                System.out.println("\t|        |");
+                System.out.println("  **|        |**");
+                System.out.println("\t|________|");
+                System.out.println("\t ||    ||");
+                System.out.println("\t ||    ||");
+                System.out.println("\t ||    ||");
+                System.out.println("\t ||__  ||__\n");
+                                System.out.println("\t\t-----THNX FOR MAKING ME -----\n");
+
+                break;
+            default:
+                System.out.println("Invalid body part: " + bodyPart);
+                break;
+        }
+    }
+}
