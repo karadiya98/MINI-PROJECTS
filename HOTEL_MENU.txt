@@ -1,0 +1,428 @@
+import java.util.*;
+
+public class hotelmenu {
+
+    // int arr[] = new int[15];
+    static int one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen;
+    static int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0, i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, o = 0;
+    static int p = 0, q = 0, r = 0, s = 0, t = 0, u = 0, v = 0, w = 0, x = 0, y = 0, z = 0,zx=0,zy=0,uv=0;
+
+    public static void create() {
+
+        System.out.println("               _______________________________________________________________");
+        System.out.println("             */_________________________MENU CARD____________________________/*");
+        System.out.println("              ||          BREAKFAST                                           |");
+        System.out.println("              ||    -1] POHA                                 :20/             |");
+        System.out.println("              ||    -2] TEA                                  :15/             |");
+        System.out.println("              ||    -3] SAMOSA                               :25/             |");
+        System.out.println("              ||    -4] VADAS                                :30/             |");
+        System.out.println("              ||    -5] DOSA                                 :75/             |");
+        System.out.println("              ||                                                              |");
+        System.out.println("              ||           LUNCH                                              |");
+        System.out.println("              ||                  -6] CHAPPATI               :8/              |");
+        System.out.println("              ||                  -7] DALFRY                 :45/             |");
+        System.out.println("              ||                  -8] RICE PLAIN             :25/             |");
+        System.out.println("              ||                  -9] JEERA RICE             :40/             |");
+        System.out.println("              ||                  10] PANNER HANDI           :95/             |");
+        System.out.println("              ||                                                              |");
+        System.out.println("              ||       DINNER                                                 |");
+        System.out.println("              ||        -11] BIRYANI                         :169/            |");
+        System.out.println("              ||        -12] DAHI TIKHARI                    :76/             |");
+        System.out.println("              ||        -13] VEG HANDI                       :68/             |");
+        System.out.println("              ||        -14] VEG kadhai                      :68/             |");
+        System.out.println("              ||                             15] EXIT                         |");
+        System.out.println("              *_______________________________________________________________*");
+
+    }
+
+    public static void poha() {
+        // int one;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of poha you want ");
+        Scanner sc = new Scanner(System.in);
+        one = sc.nextInt();
+        p += one;
+        a = a + (one * 20);
+
+    }
+
+    public static void tea() {
+        int two;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many cups you want ");
+        Scanner sc = new Scanner(System.in);
+        two = sc.nextInt();
+        q += two;
+        b = b + (two * 15);
+    }
+
+    public static void samosa() {
+        int three;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of samosa you want ");
+        Scanner sc = new Scanner(System.in);
+        three = sc.nextInt();
+        c = c + (three * 25);
+        r += three;
+    }
+
+    public static void vadas() {
+        int four;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of vadas you want ");
+        Scanner sc = new Scanner(System.in);
+        four = sc.nextInt();
+        d = d + (four * 30);
+        s += four;
+    }
+
+    public static void dosa() {
+        int five;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of dosa you want ");
+        Scanner sc = new Scanner(System.in);
+        five = sc.nextInt();
+        e = e + (five * 75);
+        t+=five;
+
+    }
+
+    public static void chappati() {
+        int six;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many chappati  you want ");
+        Scanner sc = new Scanner(System.in);
+        six = sc.nextInt();
+        f = f + (six * 8);
+        u+=six;
+
+    }
+
+    public static void dalfry() {
+        int seven;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of dalfry you want ");
+        Scanner sc = new Scanner(System.in);
+        seven = sc.nextInt();
+        g = g + (seven * 45);
+        v+=seven;
+    }
+
+    public static void riceplain() {
+        int eight;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of rice plain you want ");
+        Scanner sc = new Scanner(System.in);
+        eight = sc.nextInt();
+        h = h + (eight * 25);
+        w+=eight;
+    }
+
+    public static void jeerarice() {
+        int nine;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of jeera rice you want ");
+        Scanner sc = new Scanner(System.in);
+        nine = sc.nextInt();
+        i = i + (nine * 40);
+        x+=nine;
+    }
+
+    public static void paneerhandi() {
+        int ten;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of panner handi you want ");
+        Scanner sc = new Scanner(System.in);
+        ten = sc.nextInt();
+        j = j + (ten * 95);
+        y+=ten;
+    }
+
+    public static void biryani() {
+        int eleven;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many bowl of biryani you want ");
+        Scanner sc = new Scanner(System.in);
+        eleven = sc.nextInt();
+        k = k + (eleven * 169);
+        z+=eleven;
+    }
+
+    public static void dahi() {
+        int twelve;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many plates of dahi thikhari you want ");
+        Scanner sc = new Scanner(System.in);
+        twelve = sc.nextInt();
+        l = l + (twelve * 76);
+        zx+=twelve;
+    }
+
+    public static void handi() {
+        int thirteen;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many  handi you want ");
+        Scanner sc = new Scanner(System.in);
+        thirteen = sc.nextInt();
+        m = m + (thirteen * 68);
+        zy+=thirteen;
+    }
+
+    public static void kadhai() {
+        int fourteen;
+        System.out.println("THNX FOR ORDERING");
+        System.out.println("how many kadhai  you want ");
+        Scanner sc = new Scanner(System.in);
+        fourteen = sc.nextInt();
+        n = n + (fourteen * 68);
+        uv+=fourteen;
+    }
+
+    public static void bill() {
+
+        int gst,total;
+        if (a >= 20) {
+            System.out.print("POHA total plates are       "+p);
+            System.out.print(" = " + a);
+            System.out.println("");
+        }
+        if (b >= 15) {
+            System.out.print("TEA total cups are          "+q);
+            System.out.print(" = " + b);
+            System.out.println("");
+        }
+
+        if (c >= 25) {
+            System.out.print("SAMOSA total plates are     "+r);
+            System.out.print(" = " + c);
+            System.out.println("");
+        }
+
+        if (d >= 30) {
+            System.out.print("VADAS total plates are     "+s);
+            System.out.print(" = " + d);
+            System.out.println("");
+        }
+
+        if (e >= 75) {
+            System.out.print("DOSA plates are             "+t);
+            System.out.print(" = " + e);
+            System.out.println("");
+        }
+        if (f >= 8) {
+            System.out.print("total chappatis  are        "+u);
+            System.out.print(" = " + f);
+            System.out.println("");
+        }
+        if(g>=45)
+        {
+            System.out.print("total DAL FRY are          "+v);
+            System.out.print(" = "+g);
+            System.out.println("");
+        }
+
+        if(h>=25)
+        {
+            System.out.print("total plain rice is        "+w);
+            System.out.print(" = "+h);
+            System.out.println("");
+        }
+
+        if(i>=40)
+        {
+
+            System.out.print("total jeera rice is        "+x);
+            System.out.print(" = "+i);
+            System.out.println("");
+        }
+        if(j>=95)
+        {
+            System.out.print("total paneer handi is      "+y);
+            System.out.print(" = "+j);
+            System.out.println("");
+        }
+        if(k>=169)
+        {
+            System.out.print("total biryanis are         "+z);
+            System.out.print(" = "+k);
+            System.out.println("");
+        }
+        if(l>=76)
+    {
+        System.out.print("total dahi thikhari are    "+zx);
+        System.out.print(" = "+l);
+        System.out.println("");
+    }
+      if(m>=68)
+      {
+        System.out.print("total veg handi is         "+zy);
+        System.out.print(" = "+m);
+        System.out.println("");
+      }
+      if(n>=68)
+      {
+        System.out.print("total veg kadhai is        "+uv);
+        System.out.print(" = "+n);
+
+      }
+
+      total=a+b+c+d+e+f+g+h+i+j+k+l+m+n;
+      gst=total/10;
+      System.out.print("                         ------------------\n");
+      System.out.println("::TOTAL BILL AMOUNT IS       "+total);
+      System.out.print("                          ------------------\n");
+      System.out.println(" INCLUDED GST 10%            "+gst);
+      System.out.println("\n\n                         _____________");
+      System.out.println("  :-FINAL         ");
+      System.out.print("        AMOUNT:              "+(total+gst));
+
+
+
+    }
+
+    public static void main(String[] args) {
+
+        int ch, cout;
+        do {
+
+            create();
+
+            System.out.println("\n\nENTER YOUR CHOICE");
+            Scanner sc = new Scanner(System.in);
+            ch = sc.nextInt();
+            if(ch>=16)
+            {
+                System.out.println("INVALID CHOICE !TRY AGAIN");
+            }
+
+
+
+            switch (ch) {
+                case 1:
+                    do{
+                    poha();
+                     System.out.println("want to add another poha  if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 2:
+                     do{
+                    tea();
+                     System.out.println("want to add tea  if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 3:
+                     do{
+                    samosa();
+                     System.out.println("want to add samosa  if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 4:
+                     do{
+                    vadas();
+                     System.out.println("want to add vadas  if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 5:
+                    do{
+                    dosa();
+                     System.out.println("want to add dosa  if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+                case 6:
+                     do{
+                    chappati();
+                     System.out.println("want to add roti if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 7:
+                    do{
+                    dalfry();
+                     System.out.println("want to add dal fry if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 8:
+                     do{
+                    riceplain();
+                     System.out.println("want to add rice  if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 9:
+                     do{
+                    jeerarice();
+                     System.out.println("want to add rice if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 10:
+                     do{
+                    paneerhandi();
+                     System.out.println("want to add panner  if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 11:
+                    do{
+                    biryani();
+                     System.out.println("want to add biryani if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 12:
+                     do{
+                    dahi();
+                     System.out.println("want to add dahi if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+                case 13:
+                     do{
+                    handi();
+                     System.out.println("want to add handi if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+                case 14:
+                    do{
+                    kadhai();
+                     System.out.println("want to add kadhai if  yes='1'&& no='0' \n");
+             cout = sc.nextInt();
+                    }while(cout!=0);
+                    break;
+
+            }
+
+             System.out.println("want to exit  if  yes='15'&& no='0' \n");
+             ch = sc.nextInt();
+
+         } while (ch != 15);
+
+
+        //bill system.
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("                           !!THNX FOR VISITING!!\n\n");
+        System.out.println("YOUR TOTAL BILL");
+
+        bill();
+        System.out.println("\n------------------------------------------------------------------------------");
+    }
+
+}
