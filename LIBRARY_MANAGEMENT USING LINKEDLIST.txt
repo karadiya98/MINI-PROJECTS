@@ -1,0 +1,454 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+const char *USERNAME="haiderali";
+const int USERPASS=0000;
+const char *ADMINNAME="library";
+const int ADMINPASS=7860;
+//-------------------------------//
+struct book{
+    int bk_id;
+    char *name;
+    int date;
+    char *author;
+    struct book *ladd,*radd;
+}*start,*temp,*new1;
+// borrow name .
+struct node{
+    char *borname;
+    int num;
+    struct node *radd1,*ladd1;
+}*start1,*temp1,*new2;
+
+void addbook(){
+     int bk_id;
+    char name[100];
+    int date;
+    char author[100];
+        printf("which book want to add :-");
+        scanf("%s",&name);
+        printf("book id :- ");
+        scanf("%d",&bk_id);   
+        printf("author of book :-");
+        scanf("%s",&author);
+        printf("todays date :-");
+        scanf("%d",&date);
+       
+       start=(struct book*)malloc(sizeof(struct book));
+    start->name = (char*)malloc(100 * sizeof(char));
+    start->author = (char*)malloc(100 * sizeof(char));
+         strcpy(start->name,name);
+       start->bk_id=bk_id;
+       strcpy(start->author,author);       
+       start->date=date;
+       int new1book;
+       
+        temp=start;
+       printf("want to add new books y=1 & n=0 :- ");
+       scanf("%d",&new1book);
+       do{
+       if(new1book==1)
+       {    
+        new1=(struct book*)malloc(sizeof(struct book));
+          new1->name = (char*)malloc(100 * sizeof(char));
+          new1->author = (char*)malloc(100 * sizeof(char));
+        printf("which book want to add :-");
+        scanf("%s",&name);
+        printf("book id :- ");
+        scanf("%d",&bk_id);   
+        printf("author of book :-");
+        scanf("%s",&author);
+        printf("todays date :-");
+        scanf("%d",&date);
+        
+       strcpy(new1->name,name);
+       new1->bk_id=bk_id;
+      strcpy(new1->author,author);
+       new1->date=date;
+       temp->radd=new1;
+       new1->ladd=temp;
+       new1->radd=NULL;
+       temp=temp->radd;
+       printf("want to add new books y=1 & n=0 :- ");
+       scanf("%d",&new1book);
+       }
+       }while(new1book!=0);
+}
+
+void addbooklast(){
+    int bk_id;
+    char name[100];
+    int date;
+    char author[100];
+    //int rtr_date;
+     //temp=NULL;
+
+    new1=(struct book*)malloc(sizeof(struct book));
+          new1->name = (char*)malloc(100 * sizeof(char));
+          new1->author = (char*)malloc(100 * sizeof(char));
+        printf("which book want to add in last :-");
+        scanf("%s",&name);
+        printf("book id :- ");
+        scanf("%d",&bk_id);   
+        printf("author of book :-");
+        scanf("%s",&author);
+        printf("todays date :-");
+        scanf("%d",&date);
+
+    strcpy(new1->name,name);
+    new1->bk_id=bk_id;
+    strcpy(new1->author,author);
+    new1->date=date;
+    new1->radd = NULL;
+
+    if(start == NULL){
+        start = new1;
+    } else {
+        temp = start;
+        while (temp->radd!= NULL) {
+            temp = temp->radd;
+        }
+        temp->radd = new1;
+        new1->ladd = temp;
+    }
+}
+
+
+
+void totalbook(){
+    if(start==NULL)
+    {
+        printf("no book is in library");
+    }
+    else
+    
+    {    temp=start;
+       int i=1;
+        do{  
+            printf("%d]  -book   = %s ",i,temp->name);
+            printf("\tid=%d",temp->bk_id);
+            printf("\t-author = %s ",temp->author);
+            printf("\n");
+            temp=temp->radd;
+            i++;
+        }while(temp!=NULL);
+    }
+    
+}
+int rtr_date,x=0,y=0;
+int todaydate;
+    
+void wantuser()
+{   char want_bk[100];
+    char borname[100];
+    int num;
+    int i=1;
+
+     
+     new2=(struct node*)malloc(sizeof(struct node));
+    new2->borname = (char*)malloc(100 * sizeof(char));
+    temp1=start1;
+     temp=start;
+     printf("what's your name :- ");
+     scanf("%s",&borname);
+     printf("\nwhat's your rollno :- ");
+     scanf("%d",&num);
+     
+     printf("which book want to borrow :-");
+    scanf("%s",&want_bk);
+    while(temp!=NULL){
+        if(strcmp(want_bk,temp->name)==0)
+        {
+            printf("book is available at %d position ",i);
+            x++;
+            
+            break;
+        }
+        else{
+            temp=temp->radd;
+            i++;
+             
+            
+        }
+        
+    }
+     
+            
+    if(x==0)
+    {
+        printf("book is not available in library");
+    }
+    else{   
+        //int rtr_date;
+        printf("enter returning date :-");
+        scanf("%d",&rtr_date);
+    }
+             
+    if(start1 == NULL){
+        start1=(struct node*)malloc(sizeof(struct node));
+    start1->borname = (char*)malloc(100 * sizeof(char));
+        
+        strcpy(start1->borname,borname);
+        start1->num=num;
+    }
+    else {
+        temp1 = start1;
+        while (temp1->radd1!= NULL) {
+            temp1 = temp1->radd1;
+        }
+        
+        strcpy(new2->borname,borname);
+        new2->num=num;
+        temp1->radd1 = new2;
+        new2->ladd1 = temp1;
+        new2->radd1=NULL;
+    }
+   
+}
+
+void borrowerdetail()
+{
+    if(start1==NULL)
+    {
+        printf("no any detail ");
+    }
+     
+    else{
+        temp1=start1;
+        while(temp1!=NULL){
+    printf("name is %s borrower ",temp1->borname);
+    printf("\nnumber is %d ",temp1->num);
+    printf("\n");
+    temp1=temp1->radd1;
+    }
+    }
+}
+void fine()
+{
+    if(x==0)
+    {
+        printf("no fine");
+    }
+    else{
+        if(y==1)
+        {
+            int diff=todaydate-rtr_date;
+            printf("your find for %d days late is %d",diff,(diff*10));
+        }
+        else
+        {
+            printf("no fine");
+        }
+    }
+}
+void return1()
+{
+    if(x==0)
+    {
+        printf("no book borrow");
+    }
+    else{
+        //int todaydate;
+        printf("todays date :-");
+        scanf("%d",&todaydate);
+        if(rtr_date<todaydate)
+        {
+            printf("you get an fine to delay return date");
+            y++;
+        }
+    }
+}
+
+
+int main ()
+{   int ch,x=0;
+    char username[100];
+    char adminname[100];
+    int userpass,adminpass;
+    printf(" \t\t\t\t\tLIBRARY MANAGEMENT \n\n");
+    do{
+    printf(" [1] USER\n [2] ADMIN\n [3] BACK\n\n");
+    printf("ENTER YOUR CHOICE :- ");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:
+            printf("enter your username :-");
+            scanf("%s",&username);
+            if(strcmp(username, USERNAME) == 0)
+            {
+                 printf("enter your password :-");
+               scanf("%d",&userpass);
+               if(userpass==USERPASS)
+               {
+                   printf("\t\t*right*");
+                   x++;
+               }
+               
+               else{
+                   printf("your password is wrong 2nd chance\n");
+                   printf("enter your password :-");
+               scanf("%d",&userpass);
+               if(userpass==USERPASS)
+               {
+                   printf("\t\t*right*");
+                   x++;
+               }
+               else{
+            printf("\nusername is right but password is wrong ");
+
+               }
+               }
+            }
+            //username is wrong
+            else{
+    printf("your username is wrong 2nd chance\n");
+                   printf("enter your username :-");
+               scanf("%s",&username);     
+               if(strcmp(username, USERNAME) == 0)
+            {
+                printf("enter your password :-");
+               scanf("%d",&userpass);
+               if(userpass==USERPASS)
+               {
+                   printf("\t\t*right*");
+                   x++;
+               }
+               else{
+                   printf("your password is wrong 2nd chance\n");
+                   printf("enter your password :-");
+               scanf("%d",&userpass);
+               if(userpass==USERPASS)
+               {
+                   printf("\t\t*right*");
+                   x++;
+               }
+               else{
+            printf("\nusername is right but password is wrong ");
+
+               }
+                
+            }
+            }
+            }
+        break;
+        
+        case 2:
+        printf("enter your adminname :-");
+            scanf("%s",&adminname);
+            if(strcmp(adminname, ADMINNAME) == 0)
+            {
+                 printf("enter your password :-");
+               scanf("%d",&adminpass);
+               if(adminpass==ADMINPASS)
+               {
+                   printf("\t\t*right*");
+                    x=0;
+               }
+               else{
+                   printf("your password is wrong 2nd chance\n");
+                   printf("enter your password :-");
+               scanf("%d",&adminpass);
+               if(adminpass==ADMINPASS)
+               {
+                   printf("\t\t*right*");
+                    x=0;
+               }
+               else{
+            printf("\nadminname is right but password is wrong ");
+
+               }
+               }
+            }
+            //adminname is wrong
+            else{
+    printf("your adminname is wrong 2nd chance\n");
+                   printf("enter your adminname :-");
+               scanf("%s",&adminname);     
+               if(strcmp(adminname, ADMINNAME) == 0)
+            {
+                printf("enter your password :-");
+               scanf("%d",&adminpass);
+               if(adminpass==ADMINPASS)
+               {
+                   printf("\t\t*right*");
+                    x=0;
+               }
+               else{
+                   printf("your password is wrong 2nd chance\n");
+                   printf("enter your password :-");
+               scanf("%d",&adminpass);
+               if(adminpass==ADMINPASS)
+               {
+                   printf("\t\t*right*");
+                   x=0;
+                   
+               }
+               else{
+            printf("\nadminname is right but password is wrong ");
+
+               }
+                
+            }
+            }
+            }
+        
+        break;
+    }
+    
+   
+    
+    int choice;
+    do{
+    if(x==1)
+    {
+        printf("\n\n\t\t\t\t\t\t[1] USER BLOCK\n");
+        printf(" 1) BORROW BOOK\n 2) RETURN BOOK\n 3) EXIT\n 4) FINE");
+        printf("\n\n\t -> chooce any one :-");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:
+             wantuser();
+             break;
+             
+             case 2:
+             return1();
+             break;
+             
+             case 4:
+             fine();
+             break;
+             
+        }
+    }
+    else
+    {
+       printf("\n\n\t\t\t\t\t\t[2] ADMIN BLOCK\n");
+        printf(" 1) ADD BOOK\n 2) TOTAL BOOKS\n 3) EXIT\n 4) BORROWER DETAIL\n 5) ADD BOOK IN LAST ");
+         printf("\n\n\t -> chooce any one :-");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:
+             addbook();
+            break;
+            
+            case 2:
+             totalbook();
+            break;
+            
+            case 4:
+              borrowerdetail();
+              break;
+              
+            case 5:
+            addbooklast();
+            break;
+        } 
+    }
+    }while(choice!=3 );
+ }while(ch!=3 );
+    
+}
