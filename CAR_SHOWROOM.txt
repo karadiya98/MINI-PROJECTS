@@ -1,0 +1,161 @@
+import java.util.*;
+
+interface Utility {
+    void getDetail();
+    void setDetail(Scanner sc);
+}
+
+class Showroom implements Utility {
+    String showname;
+    String location;
+    int id;
+    int employees;
+    int cars;
+
+    public void getDetail() {
+        System.out.println("Showroom name is: " + showname);
+        System.out.println("ID of " + showname + " is: " + id);
+        System.out.println("Employees of " + showname + " is: " + employees);
+        System.out.println("Cars of " + showname + " is: " + cars);
+        System.out.println("Location of " + showname + " is: " + location);
+    }
+
+    public void setDetail(Scanner sc) {
+        System.out.print("Enter showroom name: ");
+        showname = sc.nextLine();
+        System.out.print("Enter location: ");
+        location = sc.nextLine();
+        System.out.print("Enter ID: ");
+        id = sc.nextInt();
+        sc.nextLine(); // consume newline character
+        System.out.print("Enter employees: ");
+        employees = sc.nextInt();
+        sc.nextLine(); // consume newline character
+        System.out.print("Enter total cars: ");
+        cars = sc.nextInt();
+        sc.nextLine(); // consume newline character
+    }
+}
+
+class Car extends Showroom implements Utility {
+    String carname;
+    String model;
+    int carwant;
+
+    public void setDetail(Scanner scanner) {
+        System.out.print("Enter car name: ");
+        carname = scanner.nextLine();
+        System.out.print("Enter car model: ");
+        model = scanner.nextLine();
+        System.out.print("How many cars wanted: ");
+        carwant = scanner.nextInt();
+        scanner.nextLine(); // consume newline character
+    }
+
+    public void getDetail() {
+        System.out.println("In " + showname + " showroom");
+        System.out.print("Car name is: " + carname);
+        System.out.println("Car model: " + model);
+        System.out.println("How many cars wanted: " + carwant);
+    }
+}
+
+class Employees extends Showroom implements Utility {
+    String name;
+    int age;
+    int id;
+    String location;
+
+    public void setDetail(Scanner sc) {
+        System.out.println("In " + showname + " showroom");
+        System.out.print("Employee name is: ");
+        name = sc.nextLine();
+        System.out.print("Employee ID: ");
+        id = sc.nextInt();
+        sc.nextLine(); // consume newline character
+        System.out.print("Employee location: ");
+        location = sc.nextLine();
+    }
+
+    public void getDetail() {
+        System.out.println("In " + showname + " showroom");
+        System.out.print("Employee name is: " + name);
+        System.out.println("Employee ID: " + id);
+        System.out.println("Employee location: " + location);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice1 = 11;
+        int count1 = 0;
+        int count2 = 0;
+        int count3 = 0;
+        Employees[] emp = new Employees[2]; // declare emp array here
+        while (choice1 != 0) {
+            System.out.println("\t\t\t\t--------CAR'S SHOWROOM---------");
+            System.out.println("\n----------------------------------------------------------");
+            System.out.println("\t\t\t 1) SHOWROOM\n\t\t\t 2) cars\n\t\t\t 3) EMPLOYEES\n\t\t\t 4) total SHOWROOM\n\t\t\t 5) total cars\n\t\t\t 6) total employees");
+            System.out.println("\n----------------------------------------------- exit-'0'---");
+            System.out.print("-> ENTER YOUR CHOICE: ");
+            choice1 = sc.nextInt();
+            sc.nextLine(); // consume newline character
+
+            switch (choice1) {
+                case 1:
+                    Showroom[] showrooms = new Showroom[2];
+                    while (count1 < 2) {
+                        showrooms[count1] = new Showroom();
+                        showrooms[count1].setDetail(sc);
+                        System.out.println("\t\t\tWant to add another showroom? Enter '1' to continue, '9' to go back.");
+                        int choice = sc.nextInt();
+                        sc.nextLine(); // consume newline character
+                        if (choice == 9) {
+                            break;
+                        }
+                        count1++;
+                    }
+                    break;
+
+                case 2:
+                    Car[] cars = new Car[2];
+                    while (count2 < 2) {
+                        cars[count2] = new Car();
+                        cars[count2].setDetail(sc);
+                        System.out.println("\t\t\tWant to add another car? Enter '2' to continue, '9' to go back.");
+                        int choice = sc.nextInt();
+                        sc.nextLine(); // consume newline character
+                        if (choice == 9) {
+                            break;
+                        }
+                        count2++;
+                    }
+                    break;
+
+                case 3:
+                    while (count3 < 2) {
+                        emp[count3] = new Employees();
+                        emp[count3].setDetail(sc);
+                          
+                        System.out.println("\t\t\tWant to add another employee? Enter '3' to continue, '9' to go back.");
+                        int choice = sc.nextInt();
+                        sc.nextLine(); // consume newline character
+                         count3++;
+                        if (choice == 9) {
+                            break;
+                        }
+                        //count3++;
+                    }
+                    break;
+
+                case 6:
+                    for(int i=0;i<count3;i++)
+                    {
+                        emp[i].getDetail();  
+                    }
+                    break;
+            }
+        }
+    }
+}
